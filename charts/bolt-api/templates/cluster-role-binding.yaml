@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: bolt-api
+subjects:
+- kind: ServiceAccount
+  name: "bolt-api"
+  namespace: {{ required "missing" .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: bolt-api
+  apiGroup: rbac.authorization.k8s.io

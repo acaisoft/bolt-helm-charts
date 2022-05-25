@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: bolt-workflow-terminator
+subjects:
+  - kind: ServiceAccount
+    name: bolt-workflow-terminator
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: bolt-workflow-terminator
+  apiGroup: rbac.authorization.k8s.io

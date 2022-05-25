@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bolt-workflow-terminator.fullname" . }}
+  labels:
+{{ include "bolt-workflow-terminator.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.terminator.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "bolt-workflow-terminator.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "bolt-workflow-terminator.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      serviceAccount: bolt-workflow-terminator
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.terminator.image.repository }}:{{ .Values.terminator.image.tag }}"
+          imagePullPolicy: {{ .Values.terminator.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health-check
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health-check
+              port: http
+          resources:
+            {{- toYaml .Values.terminator.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.terminator.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.terminator.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
