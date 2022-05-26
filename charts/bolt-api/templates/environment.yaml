@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ include "bolt-api.name" . }}
+    helm.sh/chart: {{ include "bolt-api.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  name: bolt-config
+data:
+  config.py: |-
+    {{- range $key, $value := .Values.environment }}
+    {{ $key }} = {{ $value }}
+    {{- end }}
