@@ -44,14 +44,15 @@ tolerations: []
 affinity: {}
 
 # REQUIRED
-id_rsa: |
-  PLACEHOLDER
-id_rsa_pub: |
-  PLACEHOLDER
-known_hosts: |
-  PLACEHOLDER
-google_service_account: |
-  PLACEHOLDER
+global:
+  id_rsa: |
+    PLACEHOLDER
+  id_rsa_pub: |
+    PLACEHOLDER
+  known_hosts: |
+    PLACEHOLDER
+  google_service_account: |
+    PLACEHOLDER
 
 environment:
   BUCKET_PRIVATE_STORAGE: ""
