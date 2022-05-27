@@ -3,6 +3,15 @@ entries:
   bolt-api:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2022-05-27T10:31:22.676329828Z"
+    description: A Helm chart for Kubernetes
+    digest: b0a7b7a993e2a4fc1e598ac70a912f31c17e9c79cda4ce647564131a487f891a
+    name: bolt-api
+    urls:
+    - https://github.com/Acaisoft/bolt-helm-charts/releases/download/bolt-api-0.3.0/bolt-api-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2022-05-26T13:38:57.004020407Z"
     description: A Helm chart for Kubernetes
     digest: 92e2ffd21bd1d805baf003c54c8d337f31e9a82a8dd00c6bb29d04be9051b317
@@ -63,4 +72,4 @@ entries:
     urls:
     - https://github.com/Acaisoft/bolt-helm-charts/releases/download/bolt-workflow-0.2.0/bolt-workflow-0.2.0.tgz
     version: 0.2.0
-generated: "2022-05-27T08:04:18.355581006Z"
+generated: "2022-05-27T10:31:22.676353028Z"
