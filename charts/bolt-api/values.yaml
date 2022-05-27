@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: eu.gcr.io/acai-bolt/bolt-api
-  tag: latest
+  repository: acaisoft/bolt-api
+  tag: 1.0.0-beta
   pullPolicy: IfNotPresent
 
 nameOverride: ""

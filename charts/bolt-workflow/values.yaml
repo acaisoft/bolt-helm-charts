@@ -10,8 +10,8 @@ creator:
   argoNamespace: argo
 
   image:
-    repository: eu.gcr.io/acai-bolt/workflow-creator
-    tag: latest
+    repository: acaisoft/bolt-workflow-creator
+    tag: 1.0.0-beta
     pullPolicy: Always
 
   imagePullSecrets: []
@@ -61,8 +61,8 @@ terminator:
   replicaCount: 1
 
   image:
-    repository: eu.gcr.io/acai-bolt/bolt-workflow-termiantor
-    tag: stable
+    repository: acaisoft/bolt-workflow-terminator
+    tag: 1.0.0-beta
     pullPolicy: IfNotPresent
 
   imagePullSecrets: []
