@@ -19,6 +19,17 @@ entries:
     urls:
     - https://github.com/Acaisoft/bolt-helm-charts/releases/download/bolt-api-0.1.0/bolt-api-0.1.0.tgz
     version: 0.1.0
+  bolt-portal:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-27T08:04:18.355561406Z"
+    description: A Helm chart for Kubernetes
+    digest: 3e0322db909b3d167406638574275f205846dfa0e96c6612583e867f91a4b1fe
+    name: bolt-portal
+    type: application
+    urls:
+    - https://github.com/Acaisoft/bolt-helm-charts/releases/download/bolt-portal-0.2.0/bolt-portal-0.2.0.tgz
+    version: 0.2.0
   bolt-portal-chart-tmp:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -52,4 +63,4 @@ entries:
     urls:
     - https://github.com/Acaisoft/bolt-helm-charts/releases/download/bolt-workflow-0.2.0/bolt-workflow-0.2.0.tgz
     version: 0.2.0
-generated: "2022-05-26T14:03:57.322624196Z"
+generated: "2022-05-27T08:04:18.355581006Z"
