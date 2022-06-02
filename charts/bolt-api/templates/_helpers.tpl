@@ -38,3 +38,7 @@ Expand the name of the chart.
 {{- define "bolt-metrics-api.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{- define "endpoints" -}}
+{{ printf "WORKFLOW_CREATOR_ENDPOINT = \"http://%s-bolt-workflow-creator.%s.svc.cluster.local/workflows\"\nWORKFLOW_TERMINATE_ENDPOINT = \"http://%s-bolt-workflow-terminator.%s.svc.cluster.local/workflow-termination\"" .Release.Name .Release.Namespace .Release.Name .Release.Namespace }}
+{{- end -}}
