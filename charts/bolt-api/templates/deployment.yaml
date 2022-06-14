@@ -50,6 +50,13 @@ spec:
             value: /etc/secrets/secrets.py
           - name: GOOGLE_APPLICATION_CREDENTIALS
             value: /etc/secrets/bolt-api-service.json
+          - name: KUBE_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: HELM_RELEASE_NAME
+            value: {{ .Release.Name }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
