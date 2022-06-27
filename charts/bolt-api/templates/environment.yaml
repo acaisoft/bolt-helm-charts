@@ -9,7 +9,7 @@ metadata:
   name: bolt-config
 data:
   config.py: |-
-    HASURA_GQL: "http://hasura.{{ .Release.Namespace }}.svc.cluster.local/v1alpha1/graphql"
+    HASURA_GQL: "http://{{ .Release.Name }}-hasura.{{ .Release.Namespace }}.svc.cluster.local/v1alpha1/graphql"
     {{- range $key, $value := .Values.environment }}
     {{ $key }} = {{ $value }}
     {{- end }}

@@ -2,4 +2,4 @@ apiVersion: v2
 appVersion: "1.0"
 description: A Helm chart for Kubernetes
 name: bolt-api
-version: 0.10.0
+version: 0.11.0
