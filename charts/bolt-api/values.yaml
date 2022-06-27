@@ -56,9 +56,10 @@ global:
 
 environment:
   CONFIG_VERSION: ""
-  HASURA_GQL: ""
   HCE_DEBUG: ""
   JWT_ALGORITHM: ""
+  JWT_VALID_PERIOD: ""
+  ARGO_CONTAINER_RESOURCES: ""
 
 secrets: |
   GOOGLE_APPLICATION_CREDENTIALS = ""
