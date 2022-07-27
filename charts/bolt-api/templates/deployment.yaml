@@ -57,6 +57,12 @@ spec:
                 fieldPath: metadata.namespace
           - name: ARGO_HELM_RELEASE_NAME
             value: {{ .Release.Name }}
+          - name: CLOUDSDK_CORE_PROJECT
+            value: {{ .Values.coreProject }}
+          - name: IMAGE_REGISTRY_ADDRESS
+            value: {{ .Values.imageRegistry }}
+          - name: GOOGLE_LOGS_BUCKET
+            value: {{ .Values.logsBucket }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
