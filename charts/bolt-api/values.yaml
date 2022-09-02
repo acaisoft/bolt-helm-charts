@@ -43,25 +43,22 @@ tolerations: []
 
 affinity: {}
 
-# REQUIRED
 global:
-  id_rsa: |
-    PLACEHOLDER
-  id_rsa_pub: |
-    PLACEHOLDER
-  known_hosts: |
-    PLACEHOLDER
-  google_service_account: |
-    PLACEHOLDER
+  id_rsa: ""
+  id_rsa_pub: ""
+  known_hosts: ""
+  google_service_account: ""
 
+# multiline String
+secrets: ""
+  # GOOGLE_APPLICATION_CREDENTIALS = ""
+  # HASURA_GRAPHQL_ACCESS_KEY = ""
+  # SECRETS_VERSION = ""
+
+# REQUIRED
 environment:
   CONFIG_VERSION: ""
   HCE_DEBUG: ""
   JWT_ALGORITHM: ""
   JWT_VALID_PERIOD: ""
   ARGO_CONTAINER_RESOURCES: ""
-
-secrets: |
-  GOOGLE_APPLICATION_CREDENTIALS = ""
-  HASURA_GRAPHQL_ACCESS_KEY = ""
-  SECRETS_VERSION = ""
