@@ -1,7 +1,7 @@
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: bolt-api
+  name: {{ include "bolt-api.fullname" . }}
 rules:
 - apiGroups: [""]
   resources: ["namespaces"]
