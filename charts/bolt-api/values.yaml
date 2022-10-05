@@ -51,14 +51,15 @@ global:
 
 # multiline String
 secrets: ""
+  # |
   # GOOGLE_APPLICATION_CREDENTIALS = ""
   # HASURA_GRAPHQL_ACCESS_KEY = ""
   # SECRETS_VERSION = ""
 
 # REQUIRED
 environment:
-  CONFIG_VERSION: ""
-  HCE_DEBUG: ""
-  JWT_ALGORITHM: ""
-  JWT_VALID_PERIOD: ""
+  CONFIG_VERSION: "1"
+  HCE_DEBUG: '"false"'
+  JWT_ALGORITHM: '"RS256"'
+  JWT_VALID_PERIOD: 24
   ARGO_CONTAINER_RESOURCES: ""
