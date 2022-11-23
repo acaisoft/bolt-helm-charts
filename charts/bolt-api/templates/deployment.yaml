@@ -63,6 +63,10 @@ spec:
             value: {{ .Values.imageRegistry }}
           - name: GOOGLE_LOGS_BUCKET
             value: {{ .Values.logsBucket }}
+          {{- if .Values.werkzeugRunMain }}
+          - name: WERKZEUG_RUN_MAIN
+            value: {{ .Values.werkzeugRunMain }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
